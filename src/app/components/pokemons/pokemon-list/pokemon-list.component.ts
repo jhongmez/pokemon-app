@@ -9,6 +9,9 @@ import { PokemonService } from 'src/app/shared/services/pokemon.service';
 export class PokemonListComponent implements OnInit {
 
   pokemons = [];
+  page = -0;
+  totalPokemons: number;
+  orderPokemons: number;
 
   constructor(private pokemonService: PokemonService) { }
 
@@ -23,15 +26,15 @@ export class PokemonListComponent implements OnInit {
 
     // getPokemons: Trae datos simples del pokemon
     // getInfoPokemon: Obtiene toda la info del pokemon
-
-    this.pokemonService.getPokemons()
+    this.pokemonService.getPokemons(5, this.page += 0)
       .subscribe( (response: any) => {
+        this.totalPokemons = response.count;
+
         response.results.forEach(results => {
           this.pokemonService.getInfoPokemon(results.name)
           .subscribe( (response: any) => {
             this.pokemons.push(response);
-            console.log(this.pokemons);
-          })
+          });
         });
 
       });

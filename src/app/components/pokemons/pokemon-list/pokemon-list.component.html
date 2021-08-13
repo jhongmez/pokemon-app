@@ -1,12 +1,14 @@
 
 <section id="list-pokemons">
     <div class="content">
-        <div class="card" *ngFor="let pokemon of pokemons">
+        <div 
+        *ngFor="let pokemon of pokemons | paginate: { itemsPerPage: 10, currentPage: page, totalItems: totalPokemons}"
+        class="card">
             <div class="card-body">
                 <img [src]="pokemon.sprites.other.dream_world.front_default" [alt]="pokemon.name">
                 <div class="card-body__description">
                     <h2 class="title">
-                        {{ pokemon.name }}
+                        {{ pokemon.name }} {{ pokemon.id }}
                     </h2>
                     <p class="subtitle">
                         Habilidades:
@@ -18,4 +20,5 @@
             </div>
         </div>
     </div>
+    <pagination-controls (pageChange)="page = $event; pokemons = []; getAllPokemons();"></pagination-controls>
 </section>
