@@ -1,23 +1,33 @@
 
 <section id="list-pokemons">
     <div class="content">
-        <div 
-        *ngFor="let pokemon of pokemons | paginate: { itemsPerPage: 10, currentPage: page, totalItems: totalPokemons}"
-        class="card">
-            <div class="card-body">
-                <a [routerLink]="['/detail', pokemon.name]">
-                    <img [src]="pokemon.sprites.other.dream_world.front_default" [alt]="pokemon.name">
-                </a>
-                <div class="card-body__description">
-                    <h2 class="title">
-                        {{ pokemon.name }}
-                    </h2>
-                    <p class="subtitle">
-                        Habilidades:
-                    </p>
-                    <span class="tag-abilities" *ngFor="let item of pokemon.abilities">
-                        {{ item.ability.name }}
-                    </span>
+        <div class="language-content">
+            <button class="button" [ngClass]="{'active': activeLang == 'es'}" (click)="cambiarLenguaje('es')">
+                <img src="assets/image/icons/Ic_spanish.svg" alt="">
+            </button>
+            <button class="button"  [ngClass]="{'active': activeLang == 'en'}" (click)="cambiarLenguaje('en')">
+                <img src="assets/image/icons/Ic_english.svg" alt="">
+            </button> 
+        </div>
+        <div class="content-cards">
+            <div 
+            *ngFor="let pokemon of pokemons | paginate: { itemsPerPage: 10, currentPage: page, totalItems: totalPokemons}"
+            class="card">
+                <div class="card-body">
+                    <a [routerLink]="['/detail', pokemon.name]">
+                        <img [src]="pokemon.sprites.other.dream_world.front_default" [alt]="pokemon.name">
+                    </a>
+                    <div class="card-body__description">
+                        <h2 class="title">
+                            {{ pokemon.name }}
+                        </h2>
+                        <p class="subtitle">
+                            {{ 'principal.habilidades' | translate }}
+                        </p>
+                        <span class="tag-abilities" *ngFor="let item of pokemon.abilities">
+                            {{ item.ability.name }}
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>

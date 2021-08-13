@@ -5,6 +5,10 @@ import { PokemonListRoutingModule } from './pokemon-list-routing.module';
 import { PokemonListComponent } from './pokemon-list.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -13,7 +17,17 @@ import { NgxPaginationModule } from 'ngx-pagination';
   imports: [
     CommonModule,
     PokemonListRoutingModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (http: HttpClient) => {
+          return new TranslateHttpLoader(http);
+        },
+        deps: [ HttpClient ]
+      }
+    })
   ]
 })
 export class PokemonListModule { }
