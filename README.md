@@ -1,27 +1,16 @@
-# PokemonApp
+# README.md
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.14.
+# PokeAPP 🚀
 
-## Development server
+En este proyecto se hizo uso de la API de PokeAPI donde obtuvimos la informacion de los pokemones trayendo sus imagenes y algunas descripciones de este. Utilice el framework de Angular en la version 11 para hacer el consumo de la API
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Herramientas 🛠
 
-## Code scaffolding
+- NPM para instalar la paginación y el translate
+- Translate para traducir nuestra aplicación
+- ngx-pagination para paginar
+- SCSS como preprocesador para el manejo de variables y modularizar un poco el proyecto
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Autor 👨🏽‍💻
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Jhon Edwin Gomez Marin - Desarrollador Front-End
