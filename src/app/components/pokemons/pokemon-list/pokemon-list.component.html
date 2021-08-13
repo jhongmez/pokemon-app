@@ -1,15 +1,20 @@
-<p style="padding-top: 200px;">pokemon-list works!</p>
+
 <section id="list-pokemons">
-    <div class="content" *ngFor="let pokemon of pokemons">
-        <div class="card">
+    <div class="content">
+        <div class="card" *ngFor="let pokemon of pokemons">
             <div class="card-body">
-                <img src="" [alt]="pokemon.name">
-                <h3>
-                    {{ pokemon.name }}
-                </h3>
-                <p *ngFor="let item of pokemon.abilities">
-                    {{ item.ability.name }}
-                </p>
+                <img [src]="pokemon.sprites.other.dream_world.front_default" [alt]="pokemon.name">
+                <div class="card-body__description">
+                    <h2 class="title">
+                        {{ pokemon.name }}
+                    </h2>
+                    <p class="subtitle">
+                        Habilidades:
+                    </p>
+                    <span class="tag-abilities" *ngFor="let item of pokemon.abilities">
+                        {{ item.ability.name }}
+                    </span>
+                </div>
             </div>
         </div>
     </div>
