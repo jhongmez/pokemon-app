@@ -1,0 +1,16 @@
+@import 'src/styles';
+
+#detail-pokemon {
+    padding-top: 200px;
+
+    .content {
+        display: flex;
+        justify-content: center;
+        width: 90%;
+        margin: 0 auto;
+
+        .goBack {
+            margin-bottom: 30px;
+        }
+    }
+}

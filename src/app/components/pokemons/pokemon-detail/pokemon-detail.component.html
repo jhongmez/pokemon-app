@@ -1,0 +1,39 @@
+<section id="detail-pokemon">
+    <div class="content">
+        <div *ngIf="pokemons | async as pokemon">
+            <button (click)="goBack()" class="btn goBack">               
+                Volver atrás
+            </button>
+            <div class="card-info">
+                <div class="card-image">
+                    <img class="main-pokemon" [src]="pokemon.sprites.other.dream_world.front_default" [alt]="pokemon.name">
+                    <div class="content-versions">
+                        <h3 class="title">Versiones del videojuego</h3>
+                        <img [src]="pokemon.sprites.front_default">
+                        <img [src]="pokemon.sprites.back_default">
+                        <img [src]="pokemon.sprites.front_shiny">
+                        <img [src]="pokemon.sprites.back_shiny">
+                        <img [src]="pokemon.sprites.back_shiny_female">
+                    </div>
+                </div>
+                <div class="card-description">
+                    <h1 class="title">{{ pokemon.name }}</h1>
+                    <p class="ability">
+                        Habilidades: 
+                    </p>
+                    <p class="tag-abilities" *ngFor="let item of pokemon.abilities">
+                        {{ item.ability.name }}
+                    </p>
+                    <p class="height">
+                        Altura:
+                        <span>{{ pokemon.height }}cm</span>
+                    </p>
+                    <p class="width">
+                        Peso:
+                        <span>{{ pokemon.weight }}kg</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

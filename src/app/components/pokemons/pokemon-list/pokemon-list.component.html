@@ -5,7 +5,9 @@
         *ngFor="let pokemon of pokemons | paginate: { itemsPerPage: 10, currentPage: page, totalItems: totalPokemons}"
         class="card">
             <div class="card-body">
-                <img [src]="pokemon.sprites.other.dream_world.front_default" [alt]="pokemon.name">
+                <a [routerLink]="['/detail', pokemon.name]">
+                    <img [src]="pokemon.sprites.other.dream_world.front_default" [alt]="pokemon.name">
+                </a>
                 <div class="card-body__description">
                     <h2 class="title">
                         {{ pokemon.name }}
