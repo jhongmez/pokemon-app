@@ -17,8 +17,8 @@ export class PokemonService {
     return this.http.get(`${this.baseURL}/pokemon?limit=${limit}&offset=${offset}`);
   }
 
-  getInfoPokemon(name: string) {
-    return this.http.get(`${this.baseURL}/pokemon/${name}/`);
+  getInfoPokemon(id: string) {
+    return this.http.get(`${this.baseURL}/pokemon/${id}/`);
   }
 
 }

@@ -9,7 +9,7 @@ import { PokemonService } from 'src/app/shared/services/pokemon.service';
 export class PokemonListComponent implements OnInit {
 
   pokemons = [];
-  page = -0;
+  page = 0;
   totalPokemons: number;
   orderPokemons: number;
 
@@ -26,7 +26,7 @@ export class PokemonListComponent implements OnInit {
 
     // getPokemons: Trae datos simples del pokemon
     // getInfoPokemon: Obtiene toda la info del pokemon
-    this.pokemonService.getPokemons(5, this.page += 0)
+    this.pokemonService.getPokemons(4, this.page + 0)
       .subscribe( (response: any) => {
         this.totalPokemons = response.count;
 
