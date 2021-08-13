@@ -51,6 +51,9 @@
     border-radius: 5px;
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.1);
     padding: 40px 80px;
+    @media (max-width: 769px) {
+        flex-direction: column;
+    }
 
     .card-image {
         display: flex;
@@ -58,13 +61,22 @@
         flex-direction: column;
         align-items: center;
         margin-right: 20px;
+        @media (max-width: 769px) {
+            margin-right: 0;
+        }
 
         .main-pokemon {
             width: 300px;
+            @media (max-width: 769px) {
+                width: 100%;
+            }
         }
 
         .content-versions {
             margin-top: 40px;
+            @media (max-width: 769px) {
+                text-align: center;
+            }
 
             .title {
                 text-align: center;
@@ -78,6 +90,9 @@
         .title {
             padding-bottom: 20px;
             text-transform: capitalize;
+            @media (max-width: 769px) {
+                text-align: center;
+            }
         }
 
         .tag-abilities {
