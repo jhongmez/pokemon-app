@@ -1,0 +1,16 @@
+<p style="padding-top: 200px;">pokemon-list works!</p>
+<section id="list-pokemons">
+    <div class="content" *ngFor="let pokemon of pokemons">
+        <div class="card">
+            <div class="card-body">
+                <img src="" [alt]="pokemon.name">
+                <h3>
+                    {{ pokemon.name }}
+                </h3>
+                <p *ngFor="let item of pokemon.abilities">
+                    {{ item.ability.name }}
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
