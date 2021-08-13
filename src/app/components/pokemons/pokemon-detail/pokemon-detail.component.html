@@ -4,6 +4,14 @@
             <button (click)="goBack()" class="btn goBack">               
                 Volver atrás
             </button>
+            <div class="language-content">
+                <button class="button" [ngClass]="{'active': activeLang == 'es'}" (click)="cambiarLenguaje('es')">
+                    <img src="assets/image/icons/Ic_spanish.svg" alt="">
+                </button>
+                <button class="button"  [ngClass]="{'active': activeLang == 'en'}" (click)="cambiarLenguaje('en')">
+                    <img src="assets/image/icons/Ic_english.svg" alt="">
+                </button> 
+            </div>
             <div class="card-info">
                 <div class="card-image">
                     <img class="main-pokemon" [src]="pokemon.sprites.other.dream_world.front_default" [alt]="pokemon.name">
@@ -19,17 +27,17 @@
                 <div class="card-description">
                     <h1 class="title">{{ pokemon.name }}</h1>
                     <p class="ability">
-                        Habilidades: 
+                        {{ 'principal.habilidades' | translate }}:
                     </p>
                     <p class="tag-abilities" *ngFor="let item of pokemon.abilities">
                         {{ item.ability.name }}
                     </p>
                     <p class="height">
-                        Altura:
+                        {{ 'principal.altura' | translate }}:
                         <span>{{ pokemon.height }}cm</span>
                     </p>
                     <p class="width">
-                        Peso:
+                        {{ 'principal.peso' | translate }}:
                         <span>{{ pokemon.weight }}kg</span>
                     </p>
                 </div>

@@ -1,3 +1,5 @@
 {
-    "principal.habilidades" : "Abilities"
+    "principal.habilidades" : "Abilities",
+    "principal.altura" : "Height",
+    "principal.peso" : "Width"
 }

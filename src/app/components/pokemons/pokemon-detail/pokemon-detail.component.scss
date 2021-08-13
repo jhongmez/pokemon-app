@@ -12,5 +12,19 @@
         .goBack {
             margin-bottom: 30px;
         }
+        .language-content {
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            .button {
+                cursor: pointer;
+                background-color: $white;
+                border: 0;
+    
+                img {
+                    width: 30px;
+                }
+            }
+        }
     }
 }

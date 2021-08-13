@@ -1,3 +1,5 @@
 {
-    "principal.habilidades" : "Habilidades"
+    "principal.habilidades" : "Habilidades",
+    "principal.altura" : "Altura",
+    "principal.peso" : "Peso"
 }
